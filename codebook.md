@@ -1,11 +1,12 @@
-Dataset Information
+### Dataset Information
+
 The data linked to from the course website represent data collected from the accelerometers from the Samsung Galaxy S smartphone. A full description is available at the site where the data was obtained:
 
 The experiments have been carried out with a group of 30 volunteers within an age bracket of 19-48 years. Each person performed six activities (WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING, LAYING) wearing a smartphone (Samsung Galaxy S II) on the waist. Using its embedded accelerometer and gyroscope, we captured 3-axial linear acceleration and 3-axial angular velocity at a constant rate of 50Hz. The experiments have been video-recorded to label the data manually. The obtained dataset has been randomly partitioned into two sets, where 70% of the volunteers was selected for generating the training data and 30% the test data. 
 
 Source of data could be found at http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones
 
-Dataset Summary
+### Dataset Summary
 180 obs. of  3 variables
 # activity means the name of five six sub-tests required to conduct
 WALKING   
@@ -15,9 +16,9 @@ SITTING
 STANDING             
 LAYING 
 
-subject means the number of volunteers paticipating the test
+# subject means the number of volunteers paticipating the test
 
-variables means the aggregated mean value of their score of test
+# variables means the aggregated mean value of their score of test
 [1] "tBodyAcc-mean-X"               "tBodyAcc-mean-Y"               "tBodyAcc-mean-Z"               "tBodyAcc-std-X"               
  [5] "tBodyAcc-std-Y"                "tBodyAcc-std-Z"                "tGravityAcc-mean-X"            "tGravityAcc-mean-Y"           
  [9] "tGravityAcc-mean-Z"            "tGravityAcc-std-X"             "tGravityAcc-std-Y"             "tGravityAcc-std-Z"            
