@@ -8,7 +8,7 @@ Source of data could be found at http://archive.ics.uci.edu/ml/datasets/Human+Ac
 
 ### Dataset Summary
 180 obs. of  3 variables
-# activity means the name of five six sub-tests required to conduct
+#### activity means the name of five six sub-tests required to conduct
 WALKING   
 WALKING_UPSTAIRS 
 WALKING_DOWNSTAIRS            
@@ -16,9 +16,9 @@ SITTING
 STANDING             
 LAYING 
 
-# subject means the number of volunteers paticipating the test
+#### subject means the number of volunteers paticipating the test
 
-# variables means the aggregated mean value of their score of test
+#### variables means the aggregated mean value of their score of test
 [1] "tBodyAcc-mean-X"               "tBodyAcc-mean-Y"               "tBodyAcc-mean-Z"               "tBodyAcc-std-X"               
  [5] "tBodyAcc-std-Y"                "tBodyAcc-std-Z"                "tGravityAcc-mean-X"            "tGravityAcc-mean-Y"           
  [9] "tGravityAcc-mean-Z"            "tGravityAcc-std-X"             "tGravityAcc-std-Y"             "tGravityAcc-std-Z"            
