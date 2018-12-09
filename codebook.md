@@ -6,8 +6,10 @@ The experiments have been carried out with a group of 30 volunteers within an ag
 
 Source of data could be found at http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones
 
+### Procedure of getting the dataset cleaned
+
 ### Dataset Summary
-180 obs. of  3 variables
+180 obs. of  68  variables
 #### activity means the name of five six sub-tests required to conduct
 WALKING   
 WALKING_UPSTAIRS 
