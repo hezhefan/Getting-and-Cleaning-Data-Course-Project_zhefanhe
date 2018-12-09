@@ -8,6 +8,15 @@ Source of data could be found at http://archive.ics.uci.edu/ml/datasets/Human+Ac
 
 ### Procedure of getting the dataset cleaned
 
+1. download and unzip the file.
+2. extract and read labels & features.
+3. Extracts only the measurements on the mean and standard deviation for each measurement.
+4. load and read the train & test dataset
+5. train & test merge
+6. re-order & reshap
+7. export
+
+
 ### Dataset Summary
 180 obs. of  68  variables
 #### activity means the name of five six sub-tests required to conduct
