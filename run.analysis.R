@@ -19,25 +19,25 @@ unzip(zipfile = "final.zip")
 
 
 ## extract and read labels & features
-labels <- read.table(file = "/Users/hezhefan/Desktop/Data Analysis/Getting and Cleaning Data with R/UCI HAR Dataset/activity_labels.txt")
-features <- read.table(file = "/Users/hezhefan/Desktop/Data Analysis/Getting and Cleaning Data with R/UCI HAR Dataset/features.txt")
+labels <- read.table(file = "UCI HAR Dataset/activity_labels.txt")
+features <- read.table(file = "UCI HAR Dataset/features.txt")
 
 ## Extracts only the measurements on the mean and standard deviation for each measurement.
-features_selected_rows <- grep(pattern = ".*mean.*|.*std.*", features[, 2])
+features_selected_rows <- grep(pattern = "(mean|std)\\(\\)", features[, 2])
 features_selected <- features[features_selected_rows, 2]
 features_cleaned <- gsub("[()]", "", features_selected)
 
 ## load and read the train & test dataset
-train_X <- read.table(file = "/Users/hezhefan/Desktop/Data Analysis/Getting and Cleaning Data with R/UCI HAR Dataset/train/X_train.txt")
+train_X <- read.table(file = "UCI HAR Dataset/train/X_train.txt")
 train_X <- select(train_X, features_selected_rows)
-train_Y <- read.table(file = "/Users/hezhefan/Desktop/Data Analysis/Getting and Cleaning Data with R/UCI HAR Dataset/train/Y_train.txt")
+train_Y <- read.table(file = "UCI HAR Dataset/train/Y_train.txt")
+train_subject <- read.table(file = "UCI HAR Dataset/train/subject_train.txt")
 
-
-test_X <- read.table(file = "/Users/hezhefan/Desktop/Data Analysis/Getting and Cleaning Data with R/UCI HAR Dataset/test/X_test.txt")
+test_X <- read.table(file = "UCI HAR Dataset/test/X_test.txt")
 test_X <- select(test_X, features_selected_rows)
-test_Y <- read.table(file = "/Users/hezhefan/Desktop/Data Analysis/Getting and Cleaning Data with R/UCI HAR Dataset/test/Y_test.txt")
+test_Y <- read.table(file = "UCI HAR Dataset/test/Y_test.txt")
 
-test_subject <- read.table(file = "/Users/hezhefan/Desktop/Data Analysis/Getting and Cleaning Data with R/UCI HAR Dataset/test/subject_test.txt")
+test_subject <- read.table(file = "UCI HAR Dataset/test/subject_test.txt")
 
 
 train <- cbind(train_Y, train_subject, train_X)
@@ -56,9 +56,9 @@ dataset$subject <- as.factor(dataset$subject)
 
 
 dataset_melt <- melt(dataset, id.vars = c("activity", "subject"), variable.name = "variable")
-dataset_tidy <- dcast(dataset_melt, subject + activity ~ "variable", mean)
+dataset_tidy <- dcast(dataset_melt, subject + activity ~ variable, mean)
 str(dataset_tidy)
 
 ## export
-write.table(x = dataset_tidy, file = "dataset_tidy", quote = FALSE, row.names = FALSE)
+write.table(x = dataset_tidy, file = "dataset_tidy.txt", quote = FALSE, row.names = FALSE)
 unlist(features_cleaned)
